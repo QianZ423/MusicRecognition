@@ -1,0 +1,78 @@
+
+# 项目整体的参数
+fingerprint:
+  # 多线程数量
+  thread_num: 3
+  # 路径
+  path:
+    split: '/'
+    music_path: './dataset/key/'
+    query_path: './dataset/query/'
+  # 核心参数
+  core:
+    # 能量最小值
+    amp_min: 5
+    # 最近邻的几个点
+    near_num: 20
+    # 哈希的最小时间间隔
+    min_time_delta: 0
+    # 哈希的最大时间间隔
+    max_time_delta: 200
+    # 局部最大值的区域范围(十字架范围)
+    neighborhood: 40
+    stft:
+      # 采样率
+      sr: 16000
+      n_fft: 4096
+      hop_length: 1024
+      win_length: 4096
+  # 其他参数
+  show_plot:
+    # 创建歌曲的散点图
+    create_database:
+      # 绘制星座图
+      planisphere_plot: True
+    predict_plot:
+      # Hash图
+      hash_plot: True
+  # 计算时间开关
+  show_time: True
+  # 数据库相关参数
+  database:
+    # 主机IP
+    host: '127.0.0.1'
+    # 主机端口号
+    port: 3306
+    # 数据库用户名
+    user: 'root'
+    # 数据库密码
+    password: 'root'
+    # 连接的数据库名称
+    database: 'finger_prints'
+    # 字符集
+    charset: 'utf8'
+    # 数据库里面的表
+    tables:
+      # finger_prints表字段
+      finger_prints:
+        # 表名称
+        name: '`finger_prints`'
+        # 列名称
+        column:
+          id_fp: '`id_fp`'
+          music_id_fk: '`music_id_fk`'
+          hash: '`hash`'
+          offset: '`offset`'
+      # music表字段
+      music:
+        # 表名称
+        name: '`music`'
+        column:
+          music_id: '`music_id`'
+          music_name: '`music_name`'
+          music_path: '`music_path`'
+
+
+
+
+
